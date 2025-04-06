@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Tablas de Verdad Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Tablas de Verdad</h1>
+        
+        <div class="input-section">
+            <label for="variables">Variables (separadas por comas):</label>
+            <input type="text" id="variables" placeholder="Ej: p, q, r" value="p, q, r">
+            
+            <label for="expression">Expresión lógica:</label>
+            <div class="expression-input">
+                <input type="text" id="expression" placeholder="Ej: (p ∧ q) ∨ ¬r" value="(p→q)△(q→p)">
+                <div class="virtual-keyboard">
+                    <button onclick="insertSymbol('¬')">¬</button>
+                    <button onclick="insertSymbol('∧')">∧</button>
+                    <button onclick="insertSymbol('∨')">∨</button>
+                    <button onclick="insertSymbol('→')">→</button>
+                    <button onclick="insertSymbol('△')">△</button>
+                    <button onclick="insertSymbol('↔')">↔</button>
+                    <button onclick="insertSymbol('(')">(</button>
+                    <button onclick="insertSymbol(')')">)</button>
+                    <button onclick="insertSymbol('{')">{</button>
+                    <button onclick="insertSymbol('}')">}</button>
+                </div>
+            </div>
+            
+            <div class="options">
+                <label>
+                    <input type="radio" name="outputType" value="VF" checked> V/F
+                </label>
+                <label>
+                    <input type="radio" name="outputType" value="01"> 1/0
+                </label>
+                <label>
+                    <input type="checkbox" id="showSteps" checked> Mostrar pasos intermedios
+                </label>
+            </div>
+            
+            <div class="buttons">
+                <button onclick="generateTruthTable()">Generar Tabla</button>
+                <button onclick="clearTable()">Limpiar</button>
+            </div>
+        </div>
+        
+        <div id="result" class="table-container">
+            <!-- La tabla se generará aquí -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
