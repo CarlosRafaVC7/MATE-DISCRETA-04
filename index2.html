@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Lógica Proposicional</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <h1>Simulador de Lógica Proposicional</h1>
+    
+    <div class="instructions">
+        <h3>Instrucciones:</h3>
+        <p>ÁNIMO ÁNIMO</p>
+        <p>PASOS PARA SER FELIZ:</p>
+        <ul>
+            <li><code>Ten a Jesús en tu corazón</code></li>
+            <li><code>Duerme</code></li>
+
+            
+        </ul>
+    </div>
+    
+    <div class="container">
+        <div class="input-section">
+            <h2>Entrada</h2>
+            <label for="expression">Expresión lógica:</label>
+            <div class="symbol-buttons">
+                <button class="symbol-btn" data-symbol="A">A</button>
+                <button class="symbol-btn" data-symbol="B">B</button>
+                <button class="symbol-btn" data-symbol="C">C</button>
+                <button class="symbol-btn" data-symbol="+">+ (OR)</button>
+                <button class="symbol-btn" data-symbol="·">· (AND)</button>
+                <button class="symbol-btn" data-symbol="¬">¬ (NOT)</button>
+                <button class="symbol-btn" data-symbol="(">(</button>
+                <button class="symbol-btn" data-symbol=")">)</button>
+                <button class="symbol-btn" data-symbol="→">→</button>
+                <button class="symbol-btn" data-symbol="↔">↔</button>
+            </div>
+            <input type="text" id="expression" placeholder="Ej: (A · B) + ¬C">
+            
+            <label for="variables">Variables (separadas por comas):</label>
+            <input type="text" id="variables" placeholder="Ej: A, B, C" value="A, B, C">
+            
+            <button id="evaluate">Evaluar Expresión</button>
+            <button id="clear">Limpiar</button>
+            
+            <div id="error-message" class="error"></div>
+        </div>
+        
+        <div class="output-section">
+            <h2>Tabla de Verdad</h2>
+            <div id="truth-table-container"></div>
+        </div>
+    </div>
+    
+    <div class="circuit-container">
+        <h2>Circuito Lógico</h2>
+        <div id="simplified-expr"></div>
+        <div id="circuit-diagram"></div>
+    </div>
+    
+    <script src="script2.js"></script>
+</body>
+</html>
